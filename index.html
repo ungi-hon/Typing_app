@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>タイピングアプリ</title>
+  <link href="./css/ress.css" rel="stylesheet">
+  <link href="./css/style.css" rel="stylesheet" media="screen">
+  <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/earlyaccess/hannari.css" rel="stylesheet">
+
+  <script type="text/javascript" src="//typesquare.com/3/tsst/script/ja/typesquare.js?5ce4f5f86c74446c90b261b0ac1e02ec"
+    charset="utf-8"></script>
+</head>
+
+
+<body>
+  <header>
+    <div class="door"></div>
+    <div class="description">
+      <div>
+        <h2>ようこそ刺身打へ！</h2>
+        <p>刺身打とはタイピングをするwebアプリでございます。</p>
+        <p>タイピングに出てくる単語はHAL東京web学科に所属する人や</p>
+        <p>学校の先生の名前でほとんどです。</p>
+        <p>楽しくプレーができる様に時間制限をつけてみました。友達と点数を競い合ってみましょう！！</p>
+      </div>
+      <button type="button" id="btn_start">スタート！</button>
+    </div>
+    
+  </header>
+  <div id="result">
+    <div>
+      <h2>結果</h2>
+      <p id="result_text"></p>
+    </div>
+    <button type="button" id="one_more"><a href="index.html">もう一回！</a></button>
+  </div>
+
+  <div class="count_down">
+    <img id="go_png" src="./image/go.png" alt="">
+    <img id="one_png" src="./image/one.png" alt="">
+    <img id="two_png" src="./image/two.png" alt="">
+    <img id="three_png" src="./image/three.png" alt="">
+  </div>
+
+  <div id="pose_menu">
+    <div>
+      <h2>待ちますよ</h2>
+    </div>
+
+
+    <button type="button" id="btn_back">ゲームに戻る</button>
+
+  </div>
+
+  <main>
+    <section class="left_content">
+      <p id="log"></p>
+      <div id="gauge"></div>
+      <p id="counter"></p>
+      <div class="btn">
+        <button type="button" id="top">TOP</button>
+        <button type="button" id="pose">ポーズ</button>
+      </div>
+    </section>
+
+    <section class="right_content">
+      <div id="ship">
+        <h1><img src="./image/ship.png" alt=""></h1>
+        <h2>さしみ<span>号</span></h2>
+      </div>
+
+      <div id="typing">
+          <p id="text_eng"></p>
+          <p id="text"></p>
+      </div>
+       
+      <div>
+        <img src="./image/awa.png" alt="">
+        <img src="./image/awa.png" alt="">
+        <img src="./image/awa4.png" alt="">
+        <img src="./image/awa.png" alt="">
+        <img src="./image/awa4.png" alt="">
+      </div>
+    </section>
+  </main>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

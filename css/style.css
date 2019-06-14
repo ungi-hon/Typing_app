@@ -1,0 +1,404 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Signika&display=swap");
+body {
+  font-family: MyFont;
+  /* @font-faceで定義したフォント名を指定 */ }
+
+html {
+  font-size: 62.5%;
+  width: 100%;
+  height: 100%; }
+
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative; }
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none; }
+
+.count_down {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+  .count_down > #one_png,
+  .count_down #two_png,
+  .count_down #three_png,
+  .count_down #go_png {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none; }
+
+.display_none {
+  display: none; }
+
+.ani_stop {
+  animation-play-state: paused; }
+
+header {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  z-index: 2;
+  display: flex; }
+  header > .door {
+    width: 100vw;
+    height: 200vh;
+    background-image: url(../image/haikei.jpg);
+    background-size: cover;
+    z-index: 3; }
+  header > .door_open {
+    animation: umi_open 2s ease forwards; }
+  header > .door_close {
+    animation: umi_close 2s ease forwards; }
+  header > .description {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 3; }
+    header > .description > div {
+      text-align: left;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 3rem 5rem;
+      border-radius: 5rem;
+      border: solid 9px #eb9f3b; }
+      header > .description > div > h2 {
+        font-size: 2.8rem;
+        font-weight: bold; }
+      header > .description > div > p {
+        font-size: 1.6rem; }
+    header > .description > button {
+      padding: 0 5rem;
+      height: 3.5rem;
+      background: #fff;
+      border-radius: 3.5rem;
+      border: solid 3px #eb9f3b;
+      color: #000;
+      margin-top: 10rem;
+      outline: none; }
+
+#result {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  z-index: 3;
+  text-align: center; }
+  #result > div {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 3rem 5rem;
+    border-radius: 5rem;
+    border: solid 9px #eb9f3b; }
+    #result > div > h2 {
+      font-size: 5.8rem;
+      font-weight: bold; }
+    #result > div > p {
+      font-size: 2.6rem; }
+  #result > button {
+    padding: 0 5rem;
+    height: 3.5rem;
+    background: #fff;
+    border-radius: 3.5rem;
+    border: solid 3px #eb9f3b;
+    color: #000;
+    margin-top: 10rem;
+    outline: none; }
+
+#pose_menu {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  text-align: center; }
+  #pose_menu > div {
+    width: 17.3611111111vw;
+    margin: 0 auto;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 5rem;
+    border: solid 9px #eb9f3b; }
+    #pose_menu > div > h2 {
+      font-size: 3rem; }
+  #pose_menu > #btn_back {
+    padding: 0 5rem;
+    height: 3.5rem;
+    background: #fff;
+    border-radius: 3.5rem;
+    border: solid 3px #eb9f3b;
+    color: #000;
+    margin-top: 10rem;
+    outline: none; }
+
+.pose_ani > div {
+  animation: pose_ani 1s ease forwards; }
+
+main {
+  width: 100%;
+  height: 100%;
+  display: flex; }
+  main > .left_content {
+    width: 25%;
+    height: 100%;
+    background-image: url(../image/sand.jpg);
+    background-repeat: repeat;
+    text-align: center; }
+    main > .left_content p {
+      margin-block-start: 0;
+      margin-block-end: 0; }
+    main > .left_content > #log {
+      font-size: 7.8864353312vw;
+      font-family: 'Signika', sans-serif;
+      font-weight: bold;
+      margin-top: 13.3333333333vh; }
+    main > .left_content > #gauge {
+      width: 90%;
+      height: 4rem;
+      border-radius: 4rem;
+      border: solid 3px #fff;
+      position: relative;
+      margin: 13.3333333333vh auto 0;
+      z-index: 1; }
+      main > .left_content > #gauge > .gauge_color {
+        position: absolute;
+        width: 0;
+        height: 100%;
+        border-radius: 4rem;
+        background: #187fc4;
+        animation: gauge_timer 60s linear forwards; }
+        main > .left_content > #gauge > .gauge_color > .gauge_ebi {
+          position: absolute;
+          top: -0.9345794393vw;
+          animation: ebi 60s linear forwards; }
+          main > .left_content > #gauge > .gauge_color > .gauge_ebi > .ebi_rotate {
+            width: 5.6074766355vw;
+            animation: ebi_rotate 2s linear forwards;
+            animation-iteration-count: 30; }
+    main > .left_content > #counter {
+      font-size: 6rem;
+      margin-top: 13.3333333333vh; }
+    main > .left_content > .btn {
+      display: flex;
+      justify-content: space-around; }
+      main > .left_content > .btn > button {
+        width: 40%;
+        height: 3.5rem;
+        background: #fff;
+        border-radius: 3.5rem;
+        border: solid 2px #00b5fd;
+        color: #000;
+        margin-top: 13.3333333333vh; }
+  main > .right_content {
+    width: 75%;
+    height: 100%;
+    background-image: url(../image/game_haikei.png);
+    background-size: cover;
+    position: relative;
+    animation: opacity_con 3s linear 1.3s forwards; }
+    main > .right_content #ship {
+      position: relative; }
+      main > .right_content #ship > h1 {
+        width: 60vw;
+        margin: 0 auto;
+        animation: ship 20s forwards;
+        animation-iteration-count: infinite;
+        opacity: .8; }
+        main > .right_content #ship > h1 > img {
+          width: 60vw;
+          transform: translateY(-20%); }
+      main > .right_content #ship > h2 {
+        font-family: "Hannari";
+        font-weight: bold;
+        position: absolute;
+        top: -5%;
+        left: 35%;
+        transform: translateX(-50%);
+        animation: ship 20s forwards;
+        animation-iteration-count: infinite;
+        font-size: 6vw;
+        letter-spacing: 2vw; }
+        main > .right_content #ship > h2 > span {
+          font-size: 3vw; }
+    main > .right_content > div > img {
+      opacity: .6;
+      position: absolute; }
+    main > .right_content > div > img:nth-child(1) {
+      top: 40%;
+      left: 1%;
+      width: 3rem;
+      animation: awa_move 20s linear forwards;
+      animation-iteration-count: infinite; }
+    main > .right_content > div > img:nth-child(2) {
+      top: 64%;
+      left: 24%;
+      width: 7rem;
+      animation: awa_move 20s linear 1s forwards;
+      animation-iteration-count: infinite;
+      z-index: 1; }
+    main > .right_content > div > img:nth-child(3) {
+      top: 60%;
+      left: 48%;
+      width: 6rem;
+      animation: awa_move 20s linear 1.3s forwards;
+      animation-iteration-count: infinite;
+      z-index: 1; }
+    main > .right_content > div > img:nth-child(4) {
+      top: 75%;
+      left: 74%;
+      width: 9rem;
+      animation: awa_move 20s linear 1.6s forwards;
+      animation-iteration-count: infinite; }
+    main > .right_content > div > img:nth-child(5) {
+      top: 60%;
+      left: 90%;
+      width: 10rem;
+      animation: awa_move 20s linear 1.9s forwards;
+      animation-iteration-count: infinite; }
+
+#typing {
+  position: absolute;
+  top: 57%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.2);
+  padding: 1rem 0;
+  width: 45vw;
+  margin: 0 auto;
+  border-radius: 5rem;
+  z-index: 10; }
+  #typing #text_eng {
+    font-size: 6rem;
+    font-weight: bold;
+    color: #eee;
+    text-align: center; }
+    @media (max-width: 1440px) {
+      #typing #text_eng {
+        font-size: 4.1666666667vw; } }
+  #typing #text {
+    font-size: 6rem;
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+    font-family: "M PLUS Rounded 1c";
+    font-weight: bold;
+    letter-spacing: 2rem; }
+    @media (max-width: 1440px) {
+      #typing #text {
+        font-size: 4.1666666667vw; } }
+
+.span_add {
+  color: #000; }
+
+/********************************************************************************************
+    *   all keyframes
+********************************************************************************************/
+@keyframes gauge_timer {
+  0% {
+    width: 11%; }
+  100% {
+    width: 100%; } }
+@keyframes ebi {
+  0% {
+    transform: translatex(-40%); }
+  100% {
+    transform: translateX(310%); } }
+@keyframes ebi_rotate {
+  0% {
+    transform: 0; }
+  25% {
+    transform: rotate(-45deg); }
+  50% {
+    transform: 0; }
+  75% {
+    transform: rotate(45deg); }
+  100% {
+    transform: 0; } }
+@keyframes umi_open {
+  0% {
+    transform: 0; }
+  50% {
+    opacity: 1; }
+  100% {
+    transform: translateY(-50%);
+    opacity: 0; } }
+@keyframes umi_close {
+  0% {
+    transform: translateY(-50%);
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  100% {
+    transform: 0; } }
+@keyframes opacity_con {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes awa_move {
+  0% {
+    transform: 0;
+    opacity: 1; }
+  10% {
+    transform: translate(50%, -50%); }
+  20% {
+    transform: translate(-50%, -100%); }
+  30% {
+    transform: translate(50%, -150%); }
+  40% {
+    transform: translate(-50%, -200%); }
+  50% {
+    transform: translate(50%, -250%); }
+  60% {
+    transform: translate(-50%, -300%); }
+  70% {
+    transform: translate(50%, -350%); }
+  80% {
+    transform: translate(-50%, -400%); }
+  90% {
+    transform: translate(50%, -450%); }
+  100% {
+    transform: translate(-50%, -500%);
+    opacity: 0; } }
+@keyframes pose_ani {
+  100% {
+    padding: 5rem; } }
+@keyframes ship {
+  0% {
+    transform: translate(0); }
+  3% {
+    transform: rotate(-1deg); }
+  11% {
+    transform: rotate(-5deg) translateY(5%); }
+  20% {
+    transform: translateX(-5%); }
+  31% {
+    transform: translate(-2deg) translateX(-7%); }
+  49% {
+    transform: translate(0); }
+  68% {
+    transform: translate(2deg) translateX(7%); }
+  78% {
+    transform: translateX(5%); }
+  88% {
+    transform: rotate(5deg) translateY(-5%); }
+  97% {
+    transform: rotate(1deg); }
+  100% {
+    transform: translate(0); } }
+
+/*# sourceMappingURL=style.css.map */
